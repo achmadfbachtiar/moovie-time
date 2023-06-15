@@ -3,18 +3,21 @@
 ## Build Setup
 
 ```bash
+# clone repository or download project from repository
+$ git clone git@github.com:achmadfbachtiar/moovie-time.git
+
+# go to project directory
+$ cd {folder-directory}/moovie-time
+
 # install dependencies
 $ yarn install
 
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+# open run project in browser
+$ http://localhost:3000/
 
-# generate static project
-$ yarn generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
