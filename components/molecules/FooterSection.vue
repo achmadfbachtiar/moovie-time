@@ -12,8 +12,8 @@
         </div>
         <div class="col-auto flex items-center justify-end">
           <p class="regular text-gray-500">
-          Made with Nuxt
-        </p>
+            Made with Nuxt
+          </p>
         </div>
       </div>
     </div>

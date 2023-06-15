@@ -10,11 +10,11 @@
       :gap="10"
     >
       <vueper-slide
-        v-for="i in 4"
+        v-for="(item, i) in highlight"
         :key="i"
       >
         <template #content>
-          <HighlightCard />
+          <HighlightCard :item="item" />
         </template>
       </vueper-slide>
       <template #bullets="{ bulletIndexes, goToSlide, currentSlide }">
@@ -34,13 +34,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import HighlightCard from '~/components/molecules/HighlightCard.vue'
 
 export default {
   name: 'BannerCarousel',
-  components: { VueperSlides, VueperSlide, HighlightCard }
+  components: { VueperSlides, VueperSlide, HighlightCard },
+  computed: {
+    ...mapState('movies', [
+      'highlight'
+    ])
+  }
 }
 </script>
 

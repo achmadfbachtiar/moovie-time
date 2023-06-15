@@ -2,8 +2,7 @@
   <div>
     <NavigationBar />
     <div style="margin-top: 90px;">
-      <BannerCarousel />
-      <DiscoverSection />
+      <ContentSection />
       <FooterSection />
     </div>
   </div>
@@ -12,13 +11,12 @@
 <script>
 import { initFlowbite } from 'flowbite'
 import NavigationBar from '~/components/organisms/NavigationBar.vue'
-import BannerCarousel from '~/components/organisms/BannerCarousel.vue'
-import DiscoverSection from '~/components/organisms/DiscoverSection.vue'
 import FooterSection from '~/components/molecules/FooterSection.vue'
+import ContentSection from '~/components/organisms/ContentSection.vue'
 
 export default {
-  name: 'IndexPage',
-  components: { NavigationBar, BannerCarousel, DiscoverSection, FooterSection },
+  name: 'ContentPage',
+  components: { NavigationBar, FooterSection, ContentSection },
   mounted () {
     initFlowbite()
   }

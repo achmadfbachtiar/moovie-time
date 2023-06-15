@@ -1,24 +1,24 @@
 <template>
   <div class="p-5 bg-neutral-950 relative information-container">
-    <div class="information-container absolute top-0 left-0 overlay" />
+    <div class="information-container absolute top-0 left-0" />
     <div class="flex">
       <img src="@/assets/icons/star.svg" alt="" class="mr-1">
       <p class="bold text-white">
-        7.3
+        {{ item.imDbRating }}
       </p>
     </div>
     <div class="flex py-3">
       <p class="medium text-white text-3xl">
-        Space Sweepers
+        {{ item.title }}
       </p>
     </div>
     <div class="flex items-center">
       <p class="regular text-white">
-        2021
+        {{ item.year }}
       </p>
       <div class="rounded-full mx-2 round-separator" />
       <p class="regular text-white">
-        Sci-Fi
+        {{ item.genre ? item.genre : 'GENRE' }}
       </p>
     </div>
     <div class="flex items-center pt-3">
@@ -31,7 +31,15 @@
 
 <script>
 export default {
-  name: 'HighlightCardInformation'
+  name: 'HighlightCardInformation',
+  props: {
+    item: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
+  }
 }
 </script>
 

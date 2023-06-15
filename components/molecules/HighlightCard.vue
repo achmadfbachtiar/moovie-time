@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center justify-center card-container mx-10">
-    <HighlightCardPoster />
-    <HighlightCardInformation />
+  <div class="flex items-center justify-center card-container mx-10" @click="goToDetail(item.id)">
+    <HighlightCardPoster :img="item.image" />
+    <HighlightCardInformation :item="item" />
   </div>
 </template>
 
@@ -11,7 +11,20 @@ import HighlightCardPoster from '../atoms/HighlightCardPoster.vue'
 
 export default {
   name: 'HighlightCard',
-  components: { HighlightCardPoster, HighlightCardInformation }
+  components: { HighlightCardPoster, HighlightCardInformation },
+  props: {
+    item: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
+  },
+  methods: {
+    goToDetail (id) {
+      this.$router.push(`/${id}`)
+    }
+  }
 }
 </script>
 
